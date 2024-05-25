@@ -1,0 +1,66 @@
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+\documentclass[journal]{IEEEtran}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+\title{Como Ler Artigos que usam Machine Learning}
+
+
+\author{Beatriz Guedes da Silva, Aluno 2\\
+\thanks{E-mails: \texttt{bgds.eng22@uea.edu.br, aluno2.snf@uea.edu.br}}}
+
+\markboth{Redes Neurais Artificiais 2024.1 -- Elloá B. Guedes}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+\maketitle
+\IEEEpeerreviewmaketitle
+
+\section{Machine Learning na Medicina}
+
+A medicina certamente foi uma das áreas mais influenciadas pelo avanço da computação. A área de \emph{Machine Learning}, também conhecida como Aprendizado de Máquina, é uma das mais exploradas para auxiliar os profissionais da saúde em seus diagnósticos e tratamentos. Mas, afinal, o que seria o \emph{Machine Learning}, quais são suas vantagens para a sociedade em geral e por que os profissionais da área da saúde devem ao menos conhecer os termos técnicos para avaliar soluções que utilizam esta ferramenta?
+
+O \emph{Machine Learning} consiste em modelos computacionais projetados para aprender a partir de uma certa base de dados sobre um determinado assunto e, assim, verificar onde um dado que não foi utilizado para treino se encaixa de acordo com os rótulos fornecidos ou até mesmo criar os rótulos a partir de semelhanças na sua base de dados.
+
+Nos últimos anos, muitas novas ferramentas de diagnóstico clínico foram desenvolvidas utilizando métodos complicados de \emph{Machine Learning} \cite{Liu2019}. O artigo que baseia este texto não foi elaborado para estudantes de computação, o que pode parecer contraditório inicialmente, mas conscientizar os profissionais da saúde para o fato de que sim, deve haver um entendimento dos mesmos para com a tecnologia é necessário para melhores resultados no que diz respeito à qualidade de vida e tratamento de seus pacientes.
+
+O \emph{Machine Learning} pode ser aplicado em todas as etapas de um exame de sintomas, desde o pré até o pós-diagnóstico, melhorando a precisão do diagnóstico com modelos treinados para analisar os sintomas de doenças específicas e também pode ajudar a corrigir diagnósticos errôneos que podem trazer aflição e outros problemas ao paciente. É necessário entender que o modelo de \emph{Machine Learning} não resolverá sozinho os problemas da medicina. É necessário um trabalho conjunto entre homem e máquina para aumentar a eficiência dos resultados.
+
+O profissional da saúde também deve entender a interface de determinado modelo para não haver confusões na hora de utilizá-lo, já que a área da saúde é a que mais possui responsabilidades caso haja alguma falha. Em resumo, é importante que os profissionais da área da saúde entendam como funciona o \emph{Machine Learning} para compreender como as previsões do modelo podem auxiliar no diagnóstico do paciente e acelerar o tratamento de doenças, potencializando as chances de cura ou melhora da qualidade de vida do paciente.
+
+Quanto ao \emph{Machine Learning}, é importante entender que o mesmo possui dois tipos de aprendizado: o aprendizado supervisionado utiliza dados já rotulados para que o modelo aprenda, ou seja, é exibido um dataset à máquina contendo todos os rótulos que ela deve aprender com base nas características da imagem, texto, áudio, etc. Para melhor compreensão, é como se a máquina recebesse várias fotos de uma parte do corpo de vários pacientes dizendo se o mesmo tem certa doença ou está saudável, assim, a máquina só pode produzir essas duas saídas para qualquer entrada. Já o aprendizado não supervisionado consiste em agrupar vários dados sem rótulos e a missão do modelo é agrupá-los segundo suas características. Um exemplo seria expor o modelo a várias imagens de raio-x e o mesmo verifica quais imagens têm semelhanças entre si, assim, um especialista analisa os resultados, corrige os erros e rotula os dados separados pelo modelo de acordo com alguma doença ou se a parte examinada está saudável.
+
+O processo do aprendizado da máquina requer muitos cuidados, pois problemas sérios podem ocorrer durante a exposição de dados ao modelo. Os mais recorrentes são o \emph{underfitting} e o \emph{overfitting}. O \emph{underfitting} ocorre quando o modelo encontra um ponto médio entre o resultado dos dados e sempre gera aquela saída para qualquer entrada. Já o \emph{overfitting} é como se fosse um excesso de ajuste do modelo aos dados fornecidos. Isso quer dizer que o modelo sempre fornecerá uma saída a determinada entrada na qual o modelo recebeu certa resposta, como se a máquina decorasse os rótulos dos dados e não os aprendesse, gerando resultados controversos com a amostra de dados usada para validação e teste da máquina.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Captura de tela 2024-04-28 205338.png}
+    \caption{Gráfico que exibe \emph{overfitting} e \emph{underfitting} em um modelo. \cite{didatica2023}}
+    \label{fig:exemplo}
+\end{figure}
+
+O \emph{underfitting} é facilmente detectado, mas para perceber o \emph{overfitting} é necessário comparar o desempenho do modelo nos conjuntos de ajuste e validação. É necessário que ambas as curvas tenham o mesmo comportamento no gráfico. Se a linha do conjunto de validação não seguir o comportamento da linha de ajuste, é certo que há algum erro no modelo de \emph{Machine Learning}. É necessário contatar os especialistas para os mesmos analisarem se a eficácia do modelo está aceitável. Como já citado anteriormente, os humanos devem ajudar as máquinas para um melhor resultado.
+
+Para prevenir o \emph{overfitting}, uma técnica utilizada é a regularização, que suaviza o ajuste do modelo de \emph{Machine Learning} de forma a evitar o \emph{overfitting} a qualquer conjunto de dados fornecido. Um dos métodos de regularização mais eficiente se chama \emph{early stopping}, que interrompe o treinamento do modelo ao perceber que o mesmo não está mais tendo avanços na aprendizagem. Para isso, é necessário estipular um número de épocas que o modelo pode passar sem melhorar seu desempenho. Se o número limite de épocas for atingido e o número de vezes que a máquina é exposta aos dados não tiver atingido o limite, devemos parar imediatamente o aprendizado, de forma a prevenir o \emph{overfitting}.
+
+Diante do exposto, é necessário que os profissionais da saúde saibam lidar com essa tecnologia, pois o que o universo que o \emph{Machine Learning} tem a oferecer tanto à medicina quanto a inúmeras áreas é de extremo reconhecimento e revolução. Para isso, os especialistas da área devem andar juntos com os modelos de \emph{Machine Learning} para verificar se as respostas fornecidas pelo modelo estão corretas. Também é necessário não se ater a apenas um profissional para estudar o modelo. Quanto mais especialistas, menos riscos de decisões erradas ou tomadas por viés de qualquer espécie. Assim, haverá uma melhora cada vez mais acentuada da qualidade de vida da sociedade.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refatvrna,otaref}
+
+
+\end{document}
+
+
